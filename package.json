@@ -1,6 +1,9 @@
 {
   "name": "@codepurse/react-key-maker",
-  "version": "0.0.1",
+  "description": "Utility for generating unique keys.",
+  "author": "Alfon Labadan",
+  "version": "0.0.2",
+  "license": "MIT",
   "type": "module",
   "sideEffects": false,
   "source": "src/index.js",
@@ -9,6 +12,18 @@
     "require": "./dist/index.cjs",
     "default": "./dist/index.esm.js"
   },
+  "keywords": [
+    "auto",
+    "key",
+    "maker",
+    "generate",
+    "unique",
+    "incremental",
+    "hash",
+    "list",
+    "rendering",
+    "utility"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
   "unpkg": "./dist/index.umd.js",

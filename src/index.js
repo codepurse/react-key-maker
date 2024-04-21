@@ -1,4 +1,4 @@
-export function useAutoKeyMaker(options = { prefix: "autoKey_", hash: false }) {
+export function useAutoKeyMaker(options = { prefix: "", hash: false }) {
   const { prefix, hash } = options;
   const memoizedKeys = new Map();
   const itemCache = new Map();
@@ -18,14 +18,15 @@ export function useAutoKeyMaker(options = { prefix: "autoKey_", hash: false }) {
     }
 
     const key = customHash(JSON.stringify(item));
-    return `${prefix}${key}`;
+    return `${prefix || "autoKey_"}${key}`; // Fallback to "autoKey_" if prefix is not provided
   };
 
   if (typeof options !== "object" || options === null) {
     throw new Error("Options must be an object.");
   }
 
-  if (typeof prefix !== "string") {
+  if (typeof prefix !== "string" && !hash) {
+    // Only enforce prefix as string if hash is false
     throw new Error("Prefix must be a string.");
   }
 
